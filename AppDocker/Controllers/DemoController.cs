@@ -20,6 +20,7 @@ namespace AppDocker.Controllers
         public async Task<IEnumerable<DemoData>> Get()
         {
             await ctx.Demos.AddAsync(new DemoData());
+            await ctx.SaveChangesAsync();
             return await ctx.Demos.ToListAsync();
         }
     }
